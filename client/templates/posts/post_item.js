@@ -3,15 +3,15 @@
  */
 
 Template.postItem.helpers({
-    ownPost: () => {
+    ownPost: function() {
         return this.userId === Meteor.userId();
     },
-    domain: () => {
+    domain: function() {
         let a = document.createElement("a");
         a.href = this.url;
         return a.hostname;
     },
-    commentsCount: () => {
+    commentsCount: function() {
         return Comments.find({postId: this._id}).count();
     }
 });
