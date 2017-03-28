@@ -8,7 +8,7 @@ if (Posts.find().count() === 0) {
     let tomId = Meteor.users.insert({
         profile: { name: 'Tom Coleman' }
     });
-    let tom = metoer.users.findOne(tomId);
+    let tom = Meteor.users.findOne(tomId);
     let sachaId = Meteor.users.insert({
         profile: { name: 'Sacha Greif' }
     });
