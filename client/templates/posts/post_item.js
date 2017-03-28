@@ -1,7 +1,11 @@
 /**
  * Created by curtis on 27/03/17.
  */
+
 Template.postItem.helpers({
+    ownPost: function() {
+        return this.userId === Meteor.userId();
+    },
     domain:function () {
         let a = document.createElement("a");
         a.href = this.url;
