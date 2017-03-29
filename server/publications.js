@@ -2,11 +2,12 @@
  * Created by curtis on 27/03/17.
  */
 Meteor.publish('posts', function(options) {
-    check(options, {
-        sort: Object,
-        limit: Number
-    });
-    return Posts.find({},options);
+    return Posts.find({}, options);
+});
+
+Meteor.publish('singlePost', function(id) {
+    check(id, String)
+    return Posts.find(id);
 });
 
 Meteor.publish('comments', function(postId) {
