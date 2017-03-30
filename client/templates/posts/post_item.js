@@ -13,6 +13,14 @@ Template.postItem.helpers({
         a.href = this.url;
         return a.hostname;
         },
+    upvotedClass: function () {
+        let userId = Meteor.userId();
+        if (userId && !_.include(this.upvoters, userId)) {
+            return 'btn-primary upvotable';
+        }   else {
+            return 'disabled';
+        }
+    }
 });
 
 Template.postItem.events({
